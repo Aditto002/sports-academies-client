@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../providers/Authprovider'
 
 function Register() {
 
+    const {createUser} = useContext(AuthContext);
+    const [error , setError] = useState('')
     const handeRegister = event =>{
         event.preventDefault();
         const form = event.target;
@@ -13,26 +16,26 @@ function Register() {
         const con_password = form.con_password.value;
         console.log(name,email,photo,password,con_password);
 
-        // localStorage.setItem('photo', JSON.stringify(photo))
+        localStorage.setItem('photo', JSON.stringify(photo))
         
-        // setError('')
-        // if(password.length<6){
-        //     setError('password must be 6 characters')
-        //     return
-        //   }
-        // if(password!==con_password){
-        //     setError('password and confirm password is not mach!')
-        //     return
-        //   }
-        // createUser(email,password)
-        // .then(result =>{
-        //     const createUser = result.user;
-        //     form.reset();
-        //     console.log(createUser);
-        // })
-        // .catch(error=>{
-        //     console.log(error)
-        // })
+        setError('')
+        if(password.length<6){
+            setError('password must be 6 characters')
+            return
+          }
+        if(password!==con_password){
+            setError('password and confirm password is not mach!')
+            return
+          }
+          createUser(email,password)
+        .then(result =>{
+            const createUser = result.user;
+            form.reset();
+            console.log(createUser);
+        })
+        .catch(error=>{
+            console.log(error)
+        })
     }
 
   return (
@@ -104,6 +107,7 @@ function Register() {
           <div className="form-control mt-6">
             <button className="btn btn-primary">Register</button>
           </div>
+          <p>{error}</p>
         </form>
         <p className="text-center my-4">Have any account ? <Link to='/login' className="text-orange-600 font-bold">Sing In</Link></p>
         </div>
