@@ -10,7 +10,7 @@ function InstructorCard({instructor}) {
     <h2 className="card-title">Instructor : {instructor.name}</h2>
     <p>Students : {instructor.student}+</p>
     <div className="card-actions">
-      <button className="btn btn-primary">See More</button>
+      <button className="btn btn-primary">Add to card</button>
     </div>
   </div>
 </div>

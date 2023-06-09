@@ -10,7 +10,7 @@ function PopularClassCard({populer}) {
     <h2 className="card-title">Activity : {populer.activity}</h2>
     <p>Students : {populer.students}+</p>
     <div className="card-actions">
-      <button className="btn btn-primary">See More</button>
+      <button className="btn btn-primary">Add to card</button>
     </div>
   </div>
 </div>
