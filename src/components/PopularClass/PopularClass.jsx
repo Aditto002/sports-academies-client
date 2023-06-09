@@ -6,7 +6,7 @@ function PopularClass() {
     const [data,setData] = useState([]);
 
     useEffect(()=>{
-        fetch("data.json")
+        fetch("http://localhost:5000/populer")
         .then(res => res.json())
         .then(data=>setData(data))
     }, [])
