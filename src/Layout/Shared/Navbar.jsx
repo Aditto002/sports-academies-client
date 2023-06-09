@@ -16,7 +16,7 @@ function Navbar() {
           </li>
     
           <li>
-            <Link to="/menu">Our Menu</Link>
+            <Link to="/instructor">Our Instructor</Link>
           </li>
         </>
       );

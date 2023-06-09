@@ -13,8 +13,8 @@ function PopularClass() {
 
 
   return (
-    <div>
-        <h1 className='text-2xl text-center mt-5'>Some Popular Classes</h1>
+    <div className='mb-5'>
+        <h1 className='text-3xl text-center mt-5 mb-5 font-bold'>Some Popular Classes</h1>
         <div className='grid md:grid-cols-3 gap-4 grid-cols-1'>
             {
                 data.map(populer =><PopularClassCard

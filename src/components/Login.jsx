@@ -85,7 +85,7 @@ function Login() {
                 </div>
               </form>
               <p className="text-center my-4">
-                New to Car-Doctor ?{" "}
+                New?{" "}
                 <Link to="/register" className="text-orange-600 font-bold">
                   Sing Up
                 </Link>
