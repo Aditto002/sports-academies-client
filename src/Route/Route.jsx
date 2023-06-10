@@ -5,6 +5,8 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import ErrorPage from "../components/errorpage/ErrorPage";
 import Allinstructor from "../pages/Allinstructor/Allinstructor";
+import Dashboart from "../Layout/Dashboart";
+import MyStudent from "../pages/Dashboarts/MyStudent";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +29,16 @@ const router = createBrowserRouter([
           path:"/instructor",
           element:<Allinstructor></Allinstructor>
         }
+      ]
+    },
+    {
+      path:'Dashborart',
+      element: <Dashboart></Dashboart>,
+      children:[
+         {
+          path:'mystudent',
+          element:<MyStudent></MyStudent>
+         }
       ]
     },
     {

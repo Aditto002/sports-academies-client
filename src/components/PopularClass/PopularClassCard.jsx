@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import useCart from '../../hook/useCart';
 
 function PopularClassCard({populer}) {
-  const {_id,activity,students} = populer
+  const {_id,activity,students,price,image} = populer
   const [, refetch] = useCart();
   const {user} = useContext(AuthContext);
   const navigate = useNavigate();
   const handlebutton = ({populer}) =>{
     if(user && user.email){
-      const list ={listId:_id,activity,students,email:user.email};
+      const list ={listId:_id,activity,image,students,price,email:user.email};
       fetch('http://localhost:5000/carts',
       {
         method: 'POST',
@@ -42,6 +42,7 @@ function PopularClassCard({populer}) {
   <div className="card-body items-center text-center">
     <h2 className="card-title">Activity : {populer.activity}</h2>
     <p>Students : {populer.students}+</p>
+    <p>Price : ${populer.price}</p>
     <div className="card-actions">
       <button onClick={()=>handlebutton({populer})} className="btn btn-primary">Add to card</button>
     </div>

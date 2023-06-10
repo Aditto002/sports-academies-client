@@ -21,7 +21,7 @@ function Navbar() {
         <Link to="/instructor">Our Instructor</Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/Dashborart/mystudent">
           <button >
             Student
             <div className="badge bg-black border-none text-white">+{cart?.length || 0}</div>
