@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import useCart from "../hook/useCart";
 
 function Dashboart() {
+  const [cart] = useCart();
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -23,7 +25,9 @@ function Dashboart() {
             <NavLink to="/Dashborart/userhome">User Home</NavLink>
           </li>
           <li>
-            <NavLink to="/Dashborart/mystudent">Student</NavLink>
+            <NavLink to="/Dashborart/mystudent">My Sports
+            <span className="badge bg-black border-none text-white">+{cart?.length || 0}</span>
+            </NavLink>
           </li>
           <li>
             <NavLink to="/Dashborart/history">Payment History</NavLink>

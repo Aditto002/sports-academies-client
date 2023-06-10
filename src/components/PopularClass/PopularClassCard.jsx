@@ -10,7 +10,7 @@ function PopularClassCard({populer}) {
   const navigate = useNavigate();
   const handlebutton = ({populer}) =>{
     if(user && user.email){
-      const list ={listId:_id,activity,image,students,price,email:user.email};
+      const list ={_id,activity,image,students,price,email:user.email};
       fetch('http://localhost:5000/carts',
       {
         method: 'POST',
