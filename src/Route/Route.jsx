@@ -7,6 +7,7 @@ import ErrorPage from "../components/errorpage/ErrorPage";
 import Allinstructor from "../pages/Allinstructor/Allinstructor";
 import Dashboart from "../Layout/Dashboart";
 import MyStudent from "../pages/Dashboarts/MyStudent";
+import AllUsers from "../pages/Dashboarts/AllUsers/AllUsers";
 
 const router = createBrowserRouter([
     {
@@ -38,12 +39,17 @@ const router = createBrowserRouter([
          {
           path:'mystudent',
           element:<MyStudent></MyStudent>
+         },
+         {
+          path:'allusers',
+          element:<AllUsers></AllUsers>
          }
       ]
     },
     {
         path:"*",
         element:<ErrorPage></ErrorPage>
-    }
+    },
+    
   ]);
   export default router;

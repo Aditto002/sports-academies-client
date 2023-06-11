@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/Authprovider";
+import SocialLogin from "../Layout/Shared/SocialLogin/SocialLogin";
 
 function Login() {
     const {singIn,googleLogIn} = useContext(AuthContext);
@@ -11,19 +12,19 @@ function Login() {
      const from = location.state?.from?.pathname || '/';
      console.log ('here',from)
 
-     const handleGoogle =()=>{
-        googleLogIn()
-        .then((result) => {
-             const user = result.user;
-             console.log(user);
-             navigate(from);
+    //  const handleGoogle =()=>{
+    //     googleLogIn()
+    //     .then((result) => {
+    //          const user = result.user;
+    //          console.log(user);
+    //          navigate(from);
     
-        })
-        .catch((error) => {
-          console.log(error)
-        })
+    //     })
+      //   .catch((error) => {
+      //     console.log(error)
+      //   })
     
-      }
+      // }
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -79,9 +80,10 @@ function Login() {
                 </div>
                 <div className="form-control mt-6">
                   <button className="btn btn-primary">Login</button>
-                  <button onClick={handleGoogle} className="btn btn-warning btn-outline mt-4">
+                  {/* <button onClick={handleGoogle} className="btn btn-warning btn-outline mt-4">
                     <FaGoogle />
-                  </button>
+                  </button> */}
+                  <SocialLogin></SocialLogin>
                 </div>
               </form>
               <p className="text-center my-4">

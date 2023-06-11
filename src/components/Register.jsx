@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../providers/Authprovider'
+import Swal from 'sweetalert2';
 
 function Register() {
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser,updateUserProfile} = useContext(AuthContext);
     const [error , setError] = useState('')
     const handeRegister = event =>{
         event.preventDefault();
@@ -30,12 +31,41 @@ function Register() {
           createUser(email,password)
         .then(result =>{
             const createUser = result.user;
-            form.reset();
+            
             console.log(createUser);
-        })
-        .catch(error=>{
-            console.log(error)
-        })
+
+            updateUserProfile(name, photo)
+            .then(() => {
+                const saveUser = { name: name, email: email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
+                          form.reset();
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'User created successfully.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            // navigate('/');
+                        }
+                    })
+
+
+
+            })
+            .catch(error => console.log(error))
+    })
+        // })
+        
     }
 
   return (
