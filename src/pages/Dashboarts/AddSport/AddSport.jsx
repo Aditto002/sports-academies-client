@@ -6,8 +6,8 @@ import Swal from 'sweetalert2';
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 function AddSport() {
     const [axiosSecure] = useAxiosSecure();
-    // , reset 
-    const { register, handleSubmit} = useForm();
+    // 
+    const { register, handleSubmit, reset } = useForm();
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
 
     const onSubmit = data => {
@@ -48,7 +48,7 @@ function AddSport() {
     
     return (
         <div className="w-full px-10">
-            {/* //onSubmit={handleSubmit(onSubmit)} */}
+            <div className='text-center font-bold text-3xl'>Add Sports</div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full mb-4">
                     <label className="label">
