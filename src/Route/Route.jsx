@@ -8,6 +8,8 @@ import Allinstructor from "../pages/Allinstructor/Allinstructor";
 import Dashboart from "../Layout/Dashboart";
 import MyStudent from "../pages/Dashboarts/MyStudent";
 import AllUsers from "../pages/Dashboarts/AllUsers/AllUsers";
+import PrivateRoute from "./PrivateRoute";
+import AddSport from "../pages/Dashboarts/AddSport/AddSport";
 
 const router = createBrowserRouter([
     {
@@ -34,7 +36,7 @@ const router = createBrowserRouter([
     },
     {
       path:'Dashborart',
-      element: <Dashboart></Dashboart>,
+      element: <PrivateRoute><Dashboart></Dashboart></PrivateRoute>,
       children:[
          {
           path:'mystudent',
@@ -43,6 +45,10 @@ const router = createBrowserRouter([
          {
           path:'allusers',
           element:<AllUsers></AllUsers>
+         },
+         {
+          path:'addsport',
+          element:<AddSport></AddSport>
          }
       ]
     },
