@@ -24,7 +24,7 @@ function AddSport() {
             if(imgResponse.success){
                 const imgURL = imgResponse.data.display_url;
                 const {insName,student, price, activity} = data;
-                const newItem = {insName, price: parseFloat(price),student:parseFloat(Student), activity, image:imgURL}
+                const newItem = {insName, price: parseFloat(price),student:parseFloat(student), activity, image:imgURL}
                 console.log(newItem)
                 axiosSecure.post('/populer', newItem)
                 .then(data => {
@@ -84,7 +84,7 @@ function AddSport() {
                     <label className="label">
                         <span className="label-text">Student</span>
                     </label>
-                    <textarea {...register("Student", { required: true })} className="input input-bordered w-full " placeholder="student number"></textarea>
+                    <textarea {...register("student", { required: true })} className="input input-bordered w-full " placeholder="student number"></textarea>
                 </div>
                 <div className="form-control w-full my-4">
                     <label className="label">

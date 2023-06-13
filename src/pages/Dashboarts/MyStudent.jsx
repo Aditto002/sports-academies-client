@@ -2,6 +2,7 @@ import React from "react";
 import useCart from "../../hook/useCart";
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 function MyStudent() {
   const [cart,refetch] = useCart();
@@ -43,7 +44,8 @@ function MyStudent() {
       <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
         <h3 >total registration : {cart.length}</h3>
         <h3 >total Amount: ${total}</h3>
-        <button className="btn btn-warning btn-sm">PAY</button>
+        <Link to="/Dashborart/payment"><button className="btn btn-warning btn-sm">PAY</button></Link>
+        
       </div>
 
       <div className="overflow-x-auto">

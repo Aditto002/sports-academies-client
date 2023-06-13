@@ -28,7 +28,7 @@ function Dashboart() {
           {
             isAdmin ? <>
             <li>
-            <NavLink to="/Dashborart/userhome">Admin Home</NavLink>
+            <NavLink to="/Dashborart/menagesports">Menage sport</NavLink>
           </li>
           <li>
             <NavLink to="/Dashborart/mystudent">My Sports

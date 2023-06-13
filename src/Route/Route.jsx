@@ -10,6 +10,8 @@ import MyStudent from "../pages/Dashboarts/MyStudent";
 import AllUsers from "../pages/Dashboarts/AllUsers/AllUsers";
 import PrivateRoute from "./PrivateRoute";
 import AddSport from "../pages/Dashboarts/AddSport/AddSport";
+import ManageItems from "../pages/Dashboarts/ManageItems/ManageItems";
+import Payment from "../pages/Dashboarts/Payment/Payment";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +51,14 @@ const router = createBrowserRouter([
          {
           path:'addsport',
           element:<AddSport></AddSport>
+         },
+         {
+          path:"menagesports",
+          element:<ManageItems></ManageItems>
+         },
+         {
+          path:"payment",
+          element:<Payment></Payment>
          }
       ]
     },
