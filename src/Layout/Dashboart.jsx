@@ -42,16 +42,14 @@ function Dashboart() {
             <NavLink to="/Dashborart/allusers">All Users</NavLink>
           </li>
             </> :<>
-            <li>
-            <NavLink to="/Dashborart/userhome">User Home</NavLink>
-          </li>
+           
           <li>
             <NavLink to="/Dashborart/mystudent">My Sports
             <span className="badge bg-black border-none text-white">+{cart?.length || 0}</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Dashborart/history">Payment History</NavLink>
+            <NavLink to="/Dashborart/paymenthistory">Payment History</NavLink>
           </li>
             </>
 

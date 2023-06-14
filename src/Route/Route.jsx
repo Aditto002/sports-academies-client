@@ -12,6 +12,8 @@ import PrivateRoute from "./PrivateRoute";
 import AddSport from "../pages/Dashboarts/AddSport/AddSport";
 import ManageItems from "../pages/Dashboarts/ManageItems/ManageItems";
 import Payment from "../pages/Dashboarts/Payment/Payment";
+import PaymentHistory from "../pages/Dashboarts/PaymentHistory/PaymentHistory";
+import Clsasses from "../pages/Classes/Clsasses";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +35,10 @@ const router = createBrowserRouter([
         {
           path:"/instructor",
           element:<Allinstructor></Allinstructor>
+        },
+        {
+          path:"/classes",
+          element:<Clsasses></Clsasses>
         }
       ]
     },
@@ -59,6 +65,10 @@ const router = createBrowserRouter([
          {
           path:"payment",
           element:<Payment></Payment>
+         },
+         {
+          path:'paymenthistory',
+          element:<PaymentHistory></PaymentHistory>
          }
       ]
     },

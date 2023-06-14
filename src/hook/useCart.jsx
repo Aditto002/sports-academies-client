@@ -11,7 +11,7 @@ const useCart = () =>{
         queryKey: ['carts', user?.email],
         enabled: !loading,
         queryFn: async () =>{
-            const response = await fetch(`http://localhost:5000/carts?email=${user?.email}`,{
+            const response = await fetch(`https://sports-academies-server-tau.vercel.app/carts?email=${user?.email}`,{
                 headers:{
                     authorization: `bearer ${token}`
                 }

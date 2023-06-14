@@ -12,19 +12,6 @@ function Login() {
      const from = location.state?.from?.pathname || '/';
      console.log ('here',from)
 
-    //  const handleGoogle =()=>{
-    //     googleLogIn()
-    //     .then((result) => {
-    //          const user = result.user;
-    //          console.log(user);
-    //          navigate(from);
-    
-    //     })
-      //   .catch((error) => {
-      //     console.log(error)
-      //   })
-    
-      // }
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -42,6 +29,9 @@ function Login() {
         console.log(error);
       });
   };
+  
+  
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">

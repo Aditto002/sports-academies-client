@@ -37,7 +37,7 @@ function Register() {
             updateUserProfile(name, photo)
             .then(() => {
                 const saveUser = { name: name, email: email }
-                fetch('http://localhost:5000/users', {
+                fetch('https://sports-academies-server-tau.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

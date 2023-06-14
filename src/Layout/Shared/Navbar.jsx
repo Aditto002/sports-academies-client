@@ -21,9 +21,12 @@ function Navbar() {
         <Link to="/instructor">Our Instructor</Link>
       </li>
       <li>
+        <Link to="/classes">Classes</Link>
+      </li>
+      <li>
         <Link to="/Dashborart/mystudent">
           <button >
-            Student
+            Dashborart
             <div className="badge bg-black border-none text-white">+{cart?.length || 0}</div>
           </button>
         </Link>
