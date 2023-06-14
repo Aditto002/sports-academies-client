@@ -31,6 +31,8 @@ useEffect(()=>{
             key={instructor._id}
             instructor={instructor}></AllinstructorCard>)
         }
+
+        
     </div>
   </div>
   

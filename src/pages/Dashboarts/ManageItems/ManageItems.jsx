@@ -18,7 +18,6 @@ const ManageItems = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-
                 axiosSecure.delete(`/populer/${item._id}`)
                     .then(res => {
                         console.log('deleted res', res.data);
