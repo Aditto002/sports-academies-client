@@ -30,7 +30,7 @@ function Login() {
       });
   };
   
-  
+  const [show, setshow] = useState(false);
 
   return (
     <div>
@@ -63,16 +63,28 @@ function Login() {
                   </label>
                   <input
                     name="password"
-                    type="password"
+                    type={show ? "text" : "password"}
                     placeholder="password"
                     className="input input-bordered"
                   />
+                
+                  <p onClick={() => setshow(!show)}>
+                    <small>
+                      {show ? (
+                        <button className=" btn-link text-sm text-indigo-400">
+                          Hide password
+                        </button>
+                      ) : (
+                        <button className=" btn-link text-sm text-indigo-400">
+                          {" "}
+                          Show password
+                        </button>
+                      )}
+                    </small>
+                  </p>
                 </div>
                 <div className="form-control mt-6">
                   <button className="btn btn-primary">Login</button>
-                  {/* <button onClick={handleGoogle} className="btn btn-warning btn-outline mt-4">
-                    <FaGoogle />
-                  </button> */}
                   <SocialLogin></SocialLogin>
                 </div>
               </form>

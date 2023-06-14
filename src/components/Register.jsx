@@ -4,7 +4,7 @@ import { AuthContext } from '../providers/Authprovider'
 import Swal from 'sweetalert2';
 
 function Register() {
-
+  const [show, setshow] = useState(false);
     const {createUser,updateUserProfile} = useContext(AuthContext);
     const [error , setError] = useState('')
     const handeRegister = event =>{
@@ -107,7 +107,7 @@ function Register() {
             </label>
             <input
               name='password'
-              type="password"
+              type={show ? "text" : "password"}
               placeholder="password"
               className="input input-bordered"
             />
@@ -118,10 +118,24 @@ function Register() {
             </label>
             <input
               name='con_password'
-              type="password"
+              type={show ? "text" : "password"}
               placeholder="password"
               className="input input-bordered"
             />
+            <p onClick={() => setshow(!show)}>
+                    <small>
+                      {show ? (
+                        <button className=" btn-link text-sm text-indigo-400">
+                          Hide password
+                        </button>
+                      ) : (
+                        <button className=" btn-link text-sm text-indigo-400">
+                          {" "}
+                          Show password
+                        </button>
+                      )}
+                    </small>
+                  </p>
           </div>
           <div className="form-control">
             <label className="label">

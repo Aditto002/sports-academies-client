@@ -24,12 +24,19 @@ function Navbar() {
         <Link to="/classes">Classes</Link>
       </li>
       <li>
-        <Link to="/Dashborart/mystudent">
+        {
+          user ?<Link to="/Dashborart/mystudent">
+          <button >
+            Dashborart
+            <div className="badge bg-black border-none text-white">+{cart?.length || 0}</div>
+          </button>
+        </Link>:<Link to="/login">
           <button >
             Dashborart
             <div className="badge bg-black border-none text-white">+{cart?.length || 0}</div>
           </button>
         </Link>
+        }
       </li>
     </>
   );
@@ -60,7 +67,7 @@ function Navbar() {
             {navbutton}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <a className="btn btn-ghost normal-case text-xl"><img className="h-[20px] w-[20px]" src="https://t4.ftcdn.net/jpg/03/02/12/83/360_F_302128359_q6aCwgAvdYZBPF4XSwxXddLPE0h3Kor1.jpg" alt="" /> Sport academies</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navbutton}</ul>
